@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { MongoClient } = require('mongodb'); // Use MongoDB client
+const { MongoClient } = require('mongodb');
 const path = require('path');
 const cors = require('cors');
 require('dotenv').config(); // Load environment variables
@@ -56,6 +56,11 @@ app.post('/book', async (req, res) => {
     const { fullname, phonenumber, profession, insurancedetails, appointment_date, appointment_time } = req.body;
     console.log('Received appointment: ', { fullname, phonenumber, profession, insurancedetails, appointment_date, appointment_time });
 
+    if (!db) {
+        console.error("Database not initialized.");
+        return res.status(500).send('Database connection is not established.');
+    }
+
     try {
         const collection = db.collection('appointments');
         const result = await collection.insertOne({
@@ -77,6 +82,11 @@ app.post('/book', async (req, res) => {
 // Route to view appointments
 app.get('/admin/appointments', async (req, res) => {
     console.log('Fetching appointments');
+
+    if (!db) {
+        console.error("Database not initialized.");
+        return res.status(500).send('Database connection is not established.');
+    }
 
     try {
         const collection = db.collection('appointments');
