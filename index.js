@@ -63,4 +63,63 @@ app.post('/book', async (req, res) => {
     }
 
     try {
-        const collection
+        const collection = db.collection('appointments'); // Corrected this line
+        const result = await collection.insertOne({
+            name: fullname,
+            phone: phonenumber,
+            profession,
+            insurance_details: insurancedetails,
+            appointment_date,
+            appointment_time,
+        });
+        console.log(`Inserted appointment for ${fullname}`);
+        res.send(`Appointment booked for ${fullname} on ${appointment_date}`);
+    } catch (err) {
+        console.error(`Error inserting data:`, err);
+        return res.status(500).send(`Error saving appointment.`);
+    }
+});
+
+// Route to view appointments
+app.get('/admin/appointments', async (req, res) => {
+    console.log('Fetching appointments');
+
+    if (!db) {
+        console.error("Database not initialized.");
+        return res.status(500).send('Database connection is not established.');
+    }
+
+    try {
+        const collection = db.collection('appointments');
+        const results = await collection.find().toArray();
+        
+        if (results.length === 0) {
+            res.send('<h1>No appointments found.</h1>');
+            return;
+        }
+        
+        let html = '<h1>Appointments</h1><table border="1"><tr><th>ID</th><th>Name</th><th>Phone</th><th>Profession</th><th>Insurance Details</th><th>Date</th><th>Time</th></tr>';
+        results.forEach(row => {
+            html += `<tr>
+                <td>${row._id}</td>
+                <td>${row.name}</td>
+                <td>${row.phone}</td>
+                <td>${row.profession}</td>
+                <td>${row.insurance_details}</td>
+                <td>${row.appointment_date}</td>
+                <td>${row.appointment_time}</td>
+            </tr>`;
+        });
+        html += '</table>';
+        res.send(html);
+    } catch (err) {
+        console.error(`Error fetching appointments:`, err);
+        return res.status(500).send(`Error retrieving appointments.`);
+    }
+});
+
+// Start the server and connect to MongoDB
+app.listen(port, async () => {
+    await connectDB();
+    console.log(`Server is running on http://localhost:${port}`);
+});
