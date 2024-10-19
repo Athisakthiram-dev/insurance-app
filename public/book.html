@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Appointment</title>
+    <link rel="stylesheet" href="css/book.css">
+    <script src="js/validation.js" defer></script>
+</head>
+<body>
+    <div class="appointment-page">
+    <div class="appointment-container">
+    <h1>Book an free Appointment</h1>
+    <form id="appointmentForm" action="/book" method="POST">
+    <label for="fullname">FullName:</label>
+    <input type="text" name="fullname" id="fullname" placeholder="Enter your FullName" required>
+    <label for="phonenumber">Mobile Number</label>
+    <input type="number" name="phonenumber" id="phonenumber" placeholder="Enter your Mobile Number" required>
+    <label for="profession">Profession</label>
+    <input type="text" name="profession" id="profession"  placeholder="Enter your Profession">
+    <label for="insurancedetails">Insured for:</label>
+    <input type="text" name="insurancedetails" id="insurancedetails" placeholder="Purpose of your Insurance planning">
+    <label for="qppointment_date">Appointment date:</label>
+    <input type="date" name="appointment_date" id="appointment_date" required>
+    <label for="appointment_time">Appointment time: </label>
+    <input type="time" name="appointment_time" id="appointment_time" required>
+    <button type="submit">Book the appointment</button>
+    </form>
+</div>
+</div>
+    
+</body>
+</html>

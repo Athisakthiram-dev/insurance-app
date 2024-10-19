@@ -1,0 +1,247 @@
+body {
+    font-family: Arial,sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #a9d6e5, #f1c40f);
+    background-size: 300% 300%; 
+    animation: backgroundMove 10s ease-in-out infinite; 
+    overflow-x: hidden;
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: navy;
+    height: 100px;
+    padding: 0 20px;
+    color: #F1C40F;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 25px;
+}
+.headi h1{
+    color: #F1C40F;
+}
+
+.buttons {
+    margin-top: 30px;
+    text-decoration: none;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.buttons button:hover {
+    background-color: #F1C40F;
+}
+
+.header img {
+    width: 150px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.content img {
+    width: 300px;
+    border-radius: 10px;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.content img:hover {
+    transform: scale(1.02);
+}
+
+.content h2 {
+    margin: 5px;
+}
+
+.content ul {
+    margin: 10px;
+    padding-left: 20px;
+}
+
+.content ul li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: url('pexels-fotios-photos-2043035.jpg') repeat-x;
+    opacity: 0.4;
+    animation: floatClouds 30s linear infinite;
+    z-index: -1; 
+}
+
+@keyframes floatClouds {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.text-section {
+    max-width: 600px;
+    background-color: #F1C40F;
+    color: darkblue;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    line-height: 1.6;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.text-section:hover {
+    transform: scale(1.02);
+}
+.utsav{
+    background-color: white;
+    transition: transform 0.3s ease;
+    width: 400px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.utsav:hover{
+    transform: scale(1.02);
+    background-color:lightgoldenrodyellow;
+}
+.utsav ul{
+    list-style: none;
+    padding-left: 0;
+}
+.utsav li{
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.utsav button{
+    padding: 10px;
+    border: 0;
+    border-radius: 10px;
+    background-color:darkblue;
+    color: white;
+}
+.utsav button:hover{
+    background-color: #F1C40F;
+}
+.Lakhsya{
+    background-color: white;
+    transition: transform 0.3s ease;
+    width: 400px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.Lakhsya:hover{
+    transform: scale(1.02);
+    background-color:lightgoldenrodyellow;
+}
+.Lakhsya ul{
+    list-style: none;
+    padding-left: 0;
+}
+.Lakhsya li{
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.Lakhsya button{
+    padding: 10px;
+    border: 0;
+    border-radius: 10px;
+    background-color:darkblue;
+    color: white;
+}
+.Lakhsya button:hover{
+    background-color: #F1C40F;
+}
+.Amrithbal{
+    background-color: white;
+    transition: transform 0.3s ease;
+    width: 400px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.Amrithbal:hover{
+    transform: scale(1.02);
+    background-color:lightgoldenrodyellow;
+}
+.Amrithbal ul{
+    list-style: none;
+    padding-left: 0;
+}
+.Amrithbal li{
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.Amrithbal button{
+    padding: 10px;
+    border: 0;
+    border-radius: 10px;
+    background-color:darkblue;
+    color: white;
+}
+.Amrithbal button:hover{
+    background-color: #F1C40F;
+}
+.policy-container{
+    display: flex;
+    justify-content: space-between;
+    margin:30px 0;
+}
+.policy{
+    flex:1;
+    margin:0 10px;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+}
+a{
+    text-decoration: none;
+}
+.footer{
+    background: linear-gradient(45deg, #b35f00, #f08d49);
+    color:#ffffff;
+    padding: 15px 0;
+    text-align: center;
+}
+.footer a{
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer a:hover{
+color: darkblue;
+}
+
